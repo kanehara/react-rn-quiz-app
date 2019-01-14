@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gql server fetches questions 1`] = `
+Object {
+  "data": Object {
+    "questions": Array [
+      Object {
+        "category": "Entertainment: Video Games",
+        "correct_answer": "True",
+        "difficulty": "easy",
+        "incorrect_answers": Array [
+          "False",
+        ],
+        "question": "&quot;Undertale&quot; is an RPG created by Toby Fox and released in 2015.",
+        "type": "boolean",
+      },
+      Object {
+        "category": "Science: Mathematics",
+        "correct_answer": "1,000,000",
+        "difficulty": "hard",
+        "incorrect_answers": Array [
+          "10",
+          "1,000,000,000",
+          "1000",
+        ],
+        "question": "How many zeptometres are inside one femtometre?",
+        "type": "multiple",
+      },
+      Object {
+        "category": "Entertainment: Musicals & Theatres",
+        "correct_answer": "Newts",
+        "difficulty": "hard",
+        "incorrect_answers": Array [
+          "Humans",
+          "Sharks",
+          "Squids",
+        ],
+        "question": "In Macbeth, the eyes of what animals were used in the Witches&#039; cauldron?",
+        "type": "multiple",
+      },
+      Object {
+        "category": "General Knowledge",
+        "correct_answer": "Finding shapes in clouds",
+        "difficulty": "hard",
+        "incorrect_answers": Array [
+          "Sleeping with your eyes open",
+          "Breaking glass with your voice",
+          "Swimming in freezing water",
+        ],
+        "question": "Nephelococcygia is the practice of doing what?",
+        "type": "multiple",
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`gql server fetches questions with custom params 1`] = `
+Object {
+  "data": Object {
+    "questions": Array [
+      Object {
+        "category": "Entertainment: Video Games",
+        "correct_answer": "True",
+        "difficulty": "easy",
+        "incorrect_answers": Array [
+          "False",
+        ],
+        "question": "&quot;Undertale&quot; is an RPG created by Toby Fox and released in 2015.",
+        "type": "boolean",
+      },
+      Object {
+        "category": "Science: Mathematics",
+        "correct_answer": "1,000,000",
+        "difficulty": "hard",
+        "incorrect_answers": Array [
+          "10",
+          "1,000,000,000",
+          "1000",
+        ],
+        "question": "How many zeptometres are inside one femtometre?",
+        "type": "multiple",
+      },
+      Object {
+        "category": "Entertainment: Musicals & Theatres",
+        "correct_answer": "Newts",
+        "difficulty": "hard",
+        "incorrect_answers": Array [
+          "Humans",
+          "Sharks",
+          "Squids",
+        ],
+        "question": "In Macbeth, the eyes of what animals were used in the Witches&#039; cauldron?",
+        "type": "multiple",
+      },
+      Object {
+        "category": "General Knowledge",
+        "correct_answer": "Finding shapes in clouds",
+        "difficulty": "hard",
+        "incorrect_answers": Array [
+          "Sleeping with your eyes open",
+          "Breaking glass with your voice",
+          "Swimming in freezing water",
+        ],
+        "question": "Nephelococcygia is the practice of doing what?",
+        "type": "multiple",
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
