@@ -6,8 +6,12 @@ import Router from './Router'
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: ${props => props.theme.fontFamily};
-    background-color: ${props => props.theme.colors.first};
-    color: ${props => props.theme.colors.second};
+    background-color: ${props => props.theme.backgroundColor};
+    color: ${props => props.theme.fontColor};
+  }
+
+  #root {
+    height: 100vh;
   }
 `
 

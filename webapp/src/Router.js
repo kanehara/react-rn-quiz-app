@@ -1,31 +1,33 @@
 import React from "react"
-import { BrowserRouter, Route, Link } from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { Flex } from "rayout"
+import Button from './components/Button'
 
-const Index = () => <h2>Home</h2>
-const About = () => <h2>About</h2>
-const Users = () => <h2>Users</h2>
+const Home = () => (
+  <Flex 
+    position='relative'
+    top='50%'
+    transform='translateY(-50%)'
+    alignItems='center' 
+    flexDirection='column'
+  >
+    <h1>Welcome to the Trivia Challenge!</h1>
+    <h3>You will be presented with 10 True or False questions.</h3>
+    <h3>Can you score 100%?</h3>
+
+    <Button>BEGIN</Button>
+  </Flex>
+)
+const Quiz = () => <h2>Quiz</h2>
+const Results = () => <h2>Results</h2>
 
 const Router = () => (
   <BrowserRouter>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about/">About</Link>
-          </li>
-          <li>
-            <Link to="/users/">Users</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Route path="/" exact component={Index} />
-      <Route path="/about/" component={About} />
-      <Route path="/users/" component={Users} />
-    </div>
+    <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/quiz" component={Quiz} />
+      <Route path="/results" component={Results} />
+    </Switch>
   </BrowserRouter>
 )
 
