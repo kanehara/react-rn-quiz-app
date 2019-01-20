@@ -1,6 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server')
 const axios = require('axios')
 const logger = require('./logger')
+const decode = require('html-entities').AllHtmlEntities.decode
 
 const typeDefs = gql`
   type Question {
@@ -28,6 +29,10 @@ const resolvers = {
         }
         const res = await axios.get('https://opentdb.com/api.php', { params })
         return res.data.results
+          .map(r => ({
+            ...r,
+            question: decode(r.question)
+          }))
       } catch (e) {
         logger.error('Error fetching data\n' + e)
       }
