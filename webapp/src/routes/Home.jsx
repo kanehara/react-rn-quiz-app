@@ -13,7 +13,6 @@ class Home extends React.Component {
   }
 
   beginQuiz = async () => {
-    this.setState({loading: true})
     try {
       await this.fetchQuestions()
     } catch (e) {
@@ -22,15 +21,13 @@ class Home extends React.Component {
         await this.fetchQuestions()
       } catch (e) {
         console.error('Failed second fetch for questions', e)
-        this.setState({error: e})
+        this.setState({error: e, loading: false})
       }
-    } finally {
-      this.setState({ loading: false })
     }
   }
 
   async fetchQuestions () {
-    debugger // eslint-disable-line
+    this.setState({loading: true})
     const response = await apolloClient.query({
       query: gql`{
         questions {
@@ -40,6 +37,7 @@ class Home extends React.Component {
         }
       }`
     })
+    this.setState({loading: false})
     this.props.setQuestions(response.data.questions)
     this.props.history.push('/quiz')
   }

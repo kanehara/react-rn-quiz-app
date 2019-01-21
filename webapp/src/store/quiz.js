@@ -1,6 +1,7 @@
 const initialState = {
   questions: [],
-  questionNum: 0
+  questionIndex: 0,
+  finished: false
 }
 
 export const setQuestions = questions => ({ type: 'SET_QUESTIONS', questions })
@@ -12,13 +13,18 @@ export const quizReducer = (state = initialState, action) => {
     case 'SET_QUESTIONS':
       return { ...state, questions: action.questions }
     case 'SET_ANSWER':
-      const q = state.questions[state.questionNum]
+      const q = state.questions[state.questionIndex]
       if (q) {
         q.answer = action.answer
+        const nextIndex = state.questionIndex + 1
+        const finished = nextIndex === state.questions.length
         return { 
           ...state,
           questions: state.questions,
-          questionNum: state.questionNum + 1
+          questionIndex: finished
+            ? state.questions.length - 1
+            : nextIndex,
+          finished
         }
       } else {
         return state

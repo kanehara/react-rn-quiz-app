@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from './theme'
 import { Router } from './routes'
-import apolloClient from './apolloClient'
-import gql from 'graphql-tag'
 import store from './store'
 import { Provider } from 'react-redux'
+import { Flex } from "rayout"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,41 +20,19 @@ const GlobalStyle = createGlobalStyle`
 `
 
 class App extends Component {
-  async componentDidMount () {
-    try {
-      this.fetchQuestions()
-    } catch(e) {
-      console.warn('Fetching questions failed on first try, retrying...', e)
-      try {
-        this.fetchQuestions()
-      } catch (e) {
-        console.error('Fetching questions failed on second try', e)
-      }
-    }
-  }
-
-  fetchQuestions = async () => {
-    const response = await apolloClient.query({
-      query: gql`{
-        questions {
-          question
-          correct_answer
-        }
-      }`
-    })
-    this.setState({
-      questions: response.data.questions
-    })
-  }
-
   render() {
     return (
       <Provider store={store}>
         <ThemeProvider theme={theme}>
-          <React.Fragment>
+          <Flex
+            padding='50px 100px'
+            textAlign='center'
+            alignItems='center' 
+            flexDirection='column'
+          >
             <GlobalStyle />
             <Router />
-          </React.Fragment>
+          </Flex>
         </ThemeProvider>
       </Provider>
     );
