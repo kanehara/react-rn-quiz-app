@@ -25,7 +25,7 @@ class App extends Component {
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <Flex
-            padding='50px 100px'
+            padding='50px'
             textAlign='center'
             alignItems='center' 
             flexDirection='column'

@@ -3,13 +3,14 @@ const colors = {
   white: '#F7FFF7',
   mint: '#4ECDC4',
   green: '#7cbe67',
+  blue: '#7095ff',
   red: '#FF6B6B',
   yellow: '#FFE66D'
 }
 
 const theme = {
-  fontFamily: 'sans-serif',
-  backgroundColor: colors.white,
+  fontFamily: "'Aleo', serif",
+  backgroundColor: colors.blue,
   fontColor: colors.black,
   buttonColor: colors.green
 }
