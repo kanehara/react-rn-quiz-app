@@ -7095,9 +7095,9 @@ raw-body@2.3.3:
     iconv-lite "0.4.23"
     unpipe "1.0.0"
 
-rayout@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/rayout/-/rayout-0.0.3.tgz#acb7631766530dc8e73db65b4744313d4b1e5318"
+rayout@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/rayout/-/rayout-0.0.5.tgz#9f09c359587ba57e8fe136e32aff622169e147fa"
 
 rc@^1.2.7:
   version "1.2.8"

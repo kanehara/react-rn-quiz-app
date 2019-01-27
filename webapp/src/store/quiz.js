@@ -11,7 +11,7 @@ export const reset = () => ({ type: 'RESET' })
 export const quizReducer = (state = initialState, action) => {
   switch(action.type) {
     case 'SET_QUESTIONS':
-      return { ...state, questions: action.questions }
+      return { ...state, questions: action.questions || [] }
     case 'SET_ANSWER':
       const q = state.questions[state.questionIndex]
       if (q) {

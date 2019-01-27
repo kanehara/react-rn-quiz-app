@@ -17,7 +17,8 @@ const FalseButton = styled(Button)`
 const Card = styled.div`
   padding: 25px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 18px 5px #e5e5e5;
   width: 95%;
 
   @media (min-width: 600px) {
@@ -39,7 +40,7 @@ class Quiz extends React.Component {
       ? <Redirect to='/results' />
       : this.question
         ? (
-          <Card>
+          <Card display='flex'>
             <h3>{this.question.category}</h3>
             <Ray minHeight='175px' marginBottom='20px'>
               <h1>{this.question.question}</h1>
