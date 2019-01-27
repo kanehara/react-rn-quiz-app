@@ -1,6 +1,7 @@
 import React from 'react'
 import Navigator from './Navigator'
 import {ThemeProvider} from 'styled-components'
+import { Provider } from 'react-redux'
 import theme from './theme.js'
 
 const App = () => (
