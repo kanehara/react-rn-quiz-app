@@ -68,10 +68,10 @@ class Results extends React.Component {
         <div>
           <h2>You scored</h2>
           <h2>{this.score} / {this.props.questions.length}</h2>
+          <Button onClick={this.restart}>Restart</Button>
           {this.props.questions.map((q, i) => (
             <Question question={q} key={i} />
           ))}
-          <Button onClick={this.restart}>Restart</Button>
         </div>
       )
       : (
