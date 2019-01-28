@@ -3,12 +3,16 @@ import {Text} from 'react-native'
 import ScreenView from './ScreenView'
 import { connect } from 'react-redux'
 
-export default class App extends React.Component {
+class QuizScreen extends React.Component {
   render() {
     return (
       <ScreenView>
-        <Text>Quiz</Text>
+        <Text>{this.props.questions.length}</Text>
       </ScreenView>
     );
   }
 }
+
+export default connect(state => ({
+  questions: state.questions
+}))(QuizScreen)
