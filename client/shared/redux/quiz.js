@@ -1,12 +1,34 @@
+import client from 'shared/apolloClient'
+import gql from 'graphql-tag'
+
 const initialState = {
   questions: [],
   questionIndex: 0,
   finished: false
 }
 
-export const setQuestions = questions => ({ type: 'SET_QUESTIONS', questions })
+
 export const setAnswer = answer => ({ type: 'SET_ANSWER', answer })
+export const setQuestions = questions => ({ type: 'SET_QUESTIONS', questions })
 export const reset = () => ({ type: 'RESET' })
+
+export const startQuiz = () => async dispatch => {
+  try {
+    const res = await client.query({
+      query: gql`{
+        questions {
+          category
+          question
+          correct_answer
+        }
+      }`
+    })
+    dispatch(setQuestions(res.data.questions))
+  } catch (e) {
+    console.error('Failed fetching for questions', e)
+    throw e
+  }
+}
 
 export const quizReducer = (state = initialState, action) => {
   switch(action.type) {

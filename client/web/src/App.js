@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme from './theme'
 import { Router } from './routes'
-import store from './store'
-import { Provider } from 'react-redux'
+import { ReduxProvider } from 'shared/redux'
 import { Flex } from "rayout"
 
 const GlobalStyle = createGlobalStyle`
@@ -22,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
+      <ReduxProvider>
         <ThemeProvider theme={theme}>
           <Flex
             padding='50px'
@@ -34,7 +33,7 @@ class App extends Component {
             <Router />
           </Flex>
         </ThemeProvider>
-      </Provider>
+      </ReduxProvider>
     );
   }
 }

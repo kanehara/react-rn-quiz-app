@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import styled, {css} from 'styled-components'
 import Button from '../components/Button'
-import {reset} from '../store/quiz'
+import {reset} from 'shared/redux/actions'
 import {Flex} from 'rayout'
 
 const QuestionHeader = styled.h3`

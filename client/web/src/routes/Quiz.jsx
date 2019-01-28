@@ -1,7 +1,7 @@
 import React from 'react'
 import { Ray, Flex } from "rayout"
 import { connect } from 'react-redux'
-import { setAnswer } from '../store/quiz'
+import { setAnswer } from 'shared/redux/actions'
 import {Redirect} from 'react-router-dom'
 import Button from '../components/Button'
 import styled from 'styled-components'
