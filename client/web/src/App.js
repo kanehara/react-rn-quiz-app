@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { createGlobalStyle } from 'styled-components'
-import { ThemeProvider } from 'shared/theme'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { Router } from './routes'
+import theme from 'shared/theme'
 import { ReduxProvider } from 'shared/redux'
 import { Flex } from "rayout"
 
@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <ReduxProvider>
-        <ThemeProvider>
+        <ThemeProvider theme={theme}>
           <Flex
             padding='50px'
             textAlign='center'

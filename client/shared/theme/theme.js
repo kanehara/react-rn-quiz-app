@@ -15,4 +15,4 @@ const theme = {
   buttonColor: colors.green
 }
 
-module.exports = theme
+export default theme
