@@ -1,12 +1,13 @@
 import React from 'react'
 import Navigator from './Navigator'
-import {ThemeProvider} from 'styled-components'
-import { Provider } from 'react-redux'
-import theme from './theme.js'
+import { ReduxProvider } from 'shared/redux'
+import { ThemeProvider } from 'shared/theme'
 
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <Navigator />
+  <ThemeProvider>
+    <ReduxProvider>
+      <Navigator />
+    </ReduxProvider>
   </ThemeProvider>
 )
 
