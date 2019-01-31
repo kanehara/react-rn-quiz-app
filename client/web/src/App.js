@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { Router } from './routes'
 import theme from 'shared/theme'
-import { ReduxProvider } from 'shared/redux'
 import { Flex } from "rayout"
+import { store, persistor } from 'shared/redux'
+import { PersistGate } from 'redux-persist/integration/react'
+import {Provider} from 'react-redux'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,19 +23,21 @@ const GlobalStyle = createGlobalStyle`
 class App extends Component {
   render() {
     return (
-      <ReduxProvider>
-        <ThemeProvider theme={theme}>
-          <Flex
-            padding='50px'
-            textAlign='center'
-            alignItems='center' 
-            flexDirection='column'
-          >
-            <GlobalStyle />
-            <Router />
-          </Flex>
-        </ThemeProvider>
-      </ReduxProvider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ThemeProvider theme={theme}>
+            <Flex
+              padding='50px'
+              textAlign='center'
+              alignItems='center' 
+              flexDirection='column'
+            >
+              <GlobalStyle />
+              <Router />
+            </Flex>
+          </ThemeProvider>
+        </PersistGate>
+      </Provider>
     );
   }
 }

@@ -3,58 +3,36 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import styled, {css} from 'styled-components'
 import Button from '../components/Button'
-import {reset} from 'shared/redux/actions'
+import {actions, getters} from 'shared/redux/quiz'
 import {Flex} from 'rayout'
+
+const QuestionsContainer = styled.div`
+  margin-bottom: 40px;
+`
 
 const QuestionHeader = styled.h3`
   color: ${({ correct }) => correct ? 'green' : 'red'};
   margin-bottom: 5px;
-  cursor: pointer;
-`
-
-const QuestionDetails = styled.div`
-  height: 0;
-  display: none;
-  opacity: 0;
-  transition: height 0.5s;
-  transition: opacity 0.5s;
-
-  ${({show}) => show && css`
-    display: block;
-    height: auto;
-    opacity: 1;
-  `}
 `
 
 class Question extends React.Component {
-  state = {
-    showDetails: false
-  }
-
   render () {
-    const {question} = this.props
+    const {question, answer} = this.props
     return (
       <Flex flexDirection='column'>
-        <QuestionHeader 
-          onClick={() => this.setState({ showDetails: !this.state.showDetails })}
-          correct={question.answer === question.correct_answer}
-        >
-          {question.question}
+        <QuestionHeader correct={answer === question.correct_answer}>
+          {question.question} - {question.correct_answer}
         </QuestionHeader>
-        <QuestionDetails show={this.state.showDetails}>
-          <p>You answered: {question.answer}</p>
-          <p>Correct answer: {question.correct_answer}</p>
-        </QuestionDetails>
       </Flex>
     )
   }
 }
 
 class Results extends React.Component {
-  get score () {
-    return this.props.questions.reduce((prev, curr) => {
-      return prev + (curr.answer === curr.correct_answer ? 1 : 0)
-    }, 0)
+  componentDidMount () {
+    if (this.props.inProgress) {
+      this.props.history.replace('/quiz')
+    }
   }
 
   restart = () => {
@@ -67,11 +45,13 @@ class Results extends React.Component {
       ? (
         <div>
           <h2>You scored</h2>
-          <h2>{this.score} / {this.props.questions.length}</h2>
+          <h2>{this.props.score} / {this.props.questions.length}</h2>
+          <QuestionsContainer>
+            {this.props.questions.map((q, i) => (
+              <Question answer={this.props.answers[i]} question={q} key={i} />
+            ))}
+          </QuestionsContainer>
           <Button onClick={this.restart}>Restart</Button>
-          {this.props.questions.map((q, i) => (
-            <Question question={q} key={i} />
-          ))}
         </div>
       )
       : (
@@ -81,11 +61,14 @@ class Results extends React.Component {
 }
 
 export default connect(
-  ({ finished, questions }) => ({
-    questions,
-    finished
+  state => ({
+    score: getters.score(state),
+    inProgress: getters.inProgress(state),
+    finished: getters.finished(state),
+    answers: state.answers,
+    questions: state.questions
   }),
   dispatch => ({
-    reset: () => dispatch(reset())
+    reset: () => dispatch(actions.reset())
   })
 )(Results)

@@ -2,12 +2,20 @@ import React from 'react'
 import { Ray } from "rayout"
 import Button from '../components/Button'
 import { connect } from 'react-redux'
-import { startQuiz as _startQuiz } from 'shared/redux/actions'
+import { actions, getters } from 'shared/redux/quiz'
 
 class Home extends React.Component {
   state = {
     loading: false,
     error: null
+  }
+
+  componentDidMount () {
+    if (this.props.inProgress) {
+      this.props.history.replace('/quiz')
+    } else if (this.props.finished) {
+      this.props.history.replace('/results')
+    }
   }
 
   startQuiz = async () => {
@@ -16,10 +24,7 @@ class Home extends React.Component {
       await this.props.startQuiz()
       this.props.history.push('/quiz')
     } catch(e) {
-      debugger // eslint-disable-line
-      this.setState({ error: e })
-    } finally {
-      this.setState({ loading: false })
+      this.setState({ error: e, loading: false })
     }
   }
 
@@ -43,8 +48,13 @@ class Home extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  startQuiz: () => dispatch(_startQuiz())
+const mapStateToProps = state => ({
+  finished: getters.finished(state),
+  inProgress: getters.inProgress(state)
 })
 
-export default connect(null, mapDispatchToProps)(Home)
+const mapDispatchToProps = (dispatch) => ({
+  startQuiz: () => dispatch(actions.startQuiz())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

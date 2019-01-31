@@ -1,24 +1,29 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import React from 'react'
-import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import { quizReducer } from './quiz'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
 const composeEnhancers =
   typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ 
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) 
     : compose
 
+const persistedReducer = persistReducer({
+  key: 'root',
+  storage
+}, quizReducer)
 
 const store = createStore(
-  quizReducer,
+  persistedReducer,
   composeEnhancers(
     applyMiddleware(thunk)
   )
 )
 
-const ReduxProvider = props => <Provider store={store}>{props.children}</Provider>
+const persistor = persistStore(store)
 
 export {
-  ReduxProvider
+  store,
+  persistor
 }

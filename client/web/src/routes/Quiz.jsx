@@ -1,7 +1,7 @@
 import React from 'react'
 import { Ray, Flex } from "rayout"
 import { connect } from 'react-redux'
-import { setAnswer } from 'shared/redux/actions'
+import { actions, getters } from 'shared/redux/quiz'
 import {Redirect} from 'react-router-dom'
 import Button from '../components/Button'
 import styled from 'styled-components'
@@ -60,11 +60,11 @@ class Quiz extends React.Component {
 
 export default connect(
   state => ({
-    finished: state.finished,
+    finished: getters.finished(state),
     questions: state.questions,
     questionIndex: state.questionIndex
   }),
   dispatch => ({
-    setAnswer: answer => dispatch(setAnswer(answer))
+    setAnswer: answer => dispatch(actions.setAnswer(answer))
   })
 )(Quiz)
