@@ -1,18 +1,27 @@
 const colors = {
   black: '#292F36',
-  white: '#f9fff7',
-  mint: '#4ECDC4',
+  white: '#ffffff',
+  greenWhite: '#c5e0de',
+  mint: '#e7fbe0',
   green: '#7cbe67',
   blue: '#7095ff',
-  red: '#FF6B6B',
+  red: '#ff5757',
   yellow: '#FFE66D'
 }
 
 const theme = {
   fontFamily: "'Aleo', serif",
-  backgroundColor: colors.white,
+  buttonBorderRadius: '10px',
+  buttonBorder: `1px solid ${colors.greenWhite}`,
+
+  // colors
+  backgroundColor: colors.mint,
   fontColor: colors.black,
-  buttonColor: colors.green
+  buttonColor: colors.white,
+  trueButtonColor: colors.blue,
+  falseButtonColor: colors.red,
+  correctColor: colors.green,
+  incorrectColor: colors.red
 }
 
 export default theme

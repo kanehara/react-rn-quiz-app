@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import Button from '../components/Button'
 import {actions, getters} from 'shared/redux/quiz'
 import {Flex} from 'rayout'
@@ -11,7 +11,10 @@ const QuestionsContainer = styled.div`
 `
 
 const QuestionHeader = styled.h3`
-  color: ${({ correct }) => correct ? 'green' : 'red'};
+  color: ${({ correct, theme }) => correct 
+    ? theme.correctColor
+    : theme.incorrectColor
+  };
   margin-bottom: 5px;
 `
 

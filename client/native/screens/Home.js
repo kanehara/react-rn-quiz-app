@@ -1,8 +1,9 @@
 import React from 'react'
-import {Button, ActivityIndicator} from 'react-native'
+import {ActivityIndicator} from 'react-native'
 import Text from 'native/components/Text'
+import Button from 'native/components/Button'
 import { H1, H2 } from 'native/components/Header'
-import ScreenView from 'native/screens/ScreenView'
+import { ScreenView } from 'native/components/View'
 import { connect } from 'react-redux'
 import { actions, getters } from 'shared/redux/quiz'
 
@@ -39,11 +40,8 @@ class Home extends React.Component {
             <React.Fragment>
               <H1>Welcome to the Trivia Challenge!</H1>
               <H2>You will be presented with 10 True or False questions.</H2>
-              <Text>Can you score 100%?</Text>
-              {this.state.loadingQuiz 
-                ? <Text>Loading...</Text>
-                : <Button onPress={this.handleStartPress} title='BEGIN' />
-              }
+              <H2>Can you score 100%?</H2>
+              <Button onPress={this.handleStartPress} title='BEGIN' />
               {this.state.error && <Text>Something went wrong while fetching questions.</Text>}
             </React.Fragment>
           )

@@ -3,15 +3,11 @@ import { Ray, Flex } from "rayout"
 import { connect } from 'react-redux'
 import { actions, getters } from 'shared/redux/quiz'
 import {Redirect} from 'react-router-dom'
-import Button from '../components/Button'
+import {TrueButton as _TrueButton, FalseButton} from '../components/Button'
 import styled from 'styled-components'
 
-const TrueButton = styled(Button)`
+const TrueButton = styled(_TrueButton)`
   margin-bottom: 35px;
-`
-
-const FalseButton = styled(Button)`
-  background-color: #fa523f;
 `
 
 const Card = styled.div`
