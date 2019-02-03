@@ -2,25 +2,8 @@
 
 exports[`Results redirects to / if not finished 1`] = `
 <div
-  className="sc-bdVaJa isNRPx"
->
-  <h2>
-    You scored
-  </h2>
-  <h2>
-     / 
-    0
-  </h2>
-  <div
-    className="sc-bxivhb kwGltp"
-  />
-  <button
-    className="sc-bdVaJa laBHJB"
-    onClick={[Function]}
-  >
-    Restart
-  </button>
-</div>
+  data-testid="homeRedirect"
+/>
 `;
 
 exports[`Results redirects to /quiz if inProgress 1`] = `
@@ -31,78 +14,6 @@ exports[`Results redirects to /quiz if inProgress 1`] = `
 
 exports[`Results renders results 1`] = `
 <div
-  className="sc-bdVaJa isNRPx"
->
-  <h2>
-    You scored
-  </h2>
-  <h2>
-     / 
-    3
-  </h2>
-  <div
-    className="sc-bxivhb kwGltp"
-  >
-    <div
-      className="sc-bwzfXH llbFDE"
-    >
-      <div
-        className="sc-bwzfXH jbdwba"
-      >
-        <h1>
-          ✅
-        </h1>
-        <h3
-          className="sc-ifAKCX jEtbre"
-        >
-          question0
-           - 
-          true
-        </h3>
-      </div>
-    </div>
-    <div
-      className="sc-bwzfXH llbFDE"
-    >
-      <div
-        className="sc-bwzfXH jbdwba"
-      >
-        <h1>
-          ❌
-        </h1>
-        <h3
-          className="sc-ifAKCX jEtbre"
-        >
-          question1
-           - 
-          true
-        </h3>
-      </div>
-    </div>
-    <div
-      className="sc-bwzfXH llbFDE"
-    >
-      <div
-        className="sc-bwzfXH jbdwba"
-      >
-        <h1>
-          ❌
-        </h1>
-        <h3
-          className="sc-ifAKCX jEtbre"
-        >
-          question2
-           - 
-          false
-        </h3>
-      </div>
-    </div>
-  </div>
-  <button
-    className="sc-bdVaJa laBHJB"
-    onClick={[Function]}
-  >
-    Restart
-  </button>
-</div>
+  data-testid="homeRedirect"
+/>
 `;

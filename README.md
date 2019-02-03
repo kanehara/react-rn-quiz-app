@@ -1,6 +1,8 @@
 # G2i Trivia
 A trivia app containing a React web client and a React Native mobile client.
 
+**Commands assume you're in the root directory**
+
 # Installing dependencies
 
 Install graphQL dependencies

@@ -6,6 +6,13 @@ import Button from '../components/Button'
 import {actions, getters} from 'shared/redux/quiz'
 import {Flex, Ray} from 'rayout'
 
+const ResultsContainer = styled.div`
+  @media (min-width: 800px) {
+    max-width: 50%;
+    margin: auto;
+  }
+`
+
 const QuestionsContainer = styled.div`
   margin: auto;
   margin-bottom: 40px;
@@ -48,30 +55,32 @@ export class Results extends React.Component {
   }
 
   render () {
-    if (this.props.finished) {
-      return (
-        <div data-testid='homeRedirect'>
-          <Redirect to='/' />
-        </div>
-      )
-    } else if (this.props.inProgress) {
+    if (this.props.inProgress) {
       return (
         <div data-testid='quizRedirect'>
           <Redirect to='/quiz' />
         </div>
       )
+    } else if (!this.props.finished) {
+      return (
+        <div data-testid='homeRedirect'>
+          <Redirect to='/' />
+        </div>
+      )
     }
 
     return (
-      <Ray maxWidth='50%' margin='auto'>
-        <h2>You scored</h2>
-        <h2>{this.props.score} / {this.props.questions.length}</h2>
-        <QuestionsContainer>
-          {this.props.questions.map((q, i) => (
-            <Question answer={this.props.answers[i]} question={q} key={i} />
-          ))}
-        </QuestionsContainer>
-        <Button onClick={this.restart}>Restart</Button>
+      <Ray margin='auto'>
+        <ResultsContainer>
+          <h2>You scored</h2>
+          <h2>{this.props.score} / {this.props.questions.length}</h2>
+          <QuestionsContainer>
+            {this.props.questions.map((q, i) => (
+              <Question answer={this.props.answers[i]} question={q} key={i} />
+            ))}
+          </QuestionsContainer>
+          <Button onClick={this.restart}>Restart</Button>
+        </ResultsContainer>
       </Ray>
     )
   }

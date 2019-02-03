@@ -27,14 +27,16 @@ describe('Results', () => {
   
   it('renders results', () => {
     expect(render(
-      <Results 
-        questions={[
-          {correct_answer: 'true', question: 'question0'},
-          {correct_answer: 'true', question: 'question1'},
-          {correct_answer: 'false', question: 'question2'}
-        ]} 
-        answers={['true', 'false', 'true']} 
-      />
+      <MemoryRouter>
+        <Results 
+          questions={[
+            {correct_answer: 'true', question: 'question0'},
+            {correct_answer: 'true', question: 'question1'},
+            {correct_answer: 'false', question: 'question2'}
+          ]} 
+          answers={['true', 'false', 'true']} 
+        />
+      </MemoryRouter>
     )).toMatchSnapshot()
   })
 
@@ -42,16 +44,19 @@ describe('Results', () => {
     const mockHistory = getMockHistory()
     const resetMock = jest.fn()
     const instance = render(
-      <Results 
-        reset={resetMock}
-        history={mockHistory}
-        questions={[
-          {correct_answer: 'true', question: 'question0'},
-          {correct_answer: 'true', question: 'question1'},
-          {correct_answer: 'false', question: 'question2'}
-        ]} 
-        answers={['true', 'false', 'true']} 
-      />
+      <MemoryRouter>
+        <Results 
+          finished
+          reset={resetMock}
+          history={mockHistory}
+          questions={[
+            {correct_answer: 'true', question: 'question0'},
+            {correct_answer: 'true', question: 'question1'},
+            {correct_answer: 'false', question: 'question2'}
+          ]} 
+          answers={['true', 'false', 'true']} 
+        />
+      </MemoryRouter>
     )
     instance.root.findByType(Button).props.onClick()
     expect(mockHistory.replace).toHaveBeenCalledWith('/')
