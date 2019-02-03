@@ -28,3 +28,4 @@ Start the RN client
 ```
 cd client/native && yarn start
 ```
+*Android requires running `yarn android` instead

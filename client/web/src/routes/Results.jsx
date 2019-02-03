@@ -4,9 +4,10 @@ import { Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 import Button from '../components/Button'
 import {actions, getters} from 'shared/redux/quiz'
-import {Flex} from 'rayout'
+import {Flex, Ray} from 'rayout'
 
 const QuestionsContainer = styled.div`
+  margin: auto;
   margin-bottom: 40px;
 `
 
@@ -16,16 +17,21 @@ const QuestionHeader = styled.h3`
     : theme.incorrectColor
   };
   margin-bottom: 5px;
+  margin-left: 20px;
 `
 
 class Question extends React.Component {
   render () {
     const {question, answer} = this.props
+    const correct = answer === question.correct_answer
     return (
-      <Flex flexDirection='column'>
-        <QuestionHeader correct={answer === question.correct_answer}>
-          {question.question} - {question.correct_answer}
-        </QuestionHeader>
+      <Flex flexDirection='column' textAlign='left'>
+        <Flex>
+          <h1>{correct ? '✅' : '❌'}</h1>
+          <QuestionHeader correct={correct}>
+            {question.question} - {question.correct_answer}
+          </QuestionHeader>
+        </Flex>
       </Flex>
     )
   }
@@ -46,7 +52,7 @@ class Results extends React.Component {
   render () {
     return this.props.finished
       ? (
-        <div>
+        <Ray maxWidth='50%' margin='auto'>
           <h2>You scored</h2>
           <h2>{this.props.score} / {this.props.questions.length}</h2>
           <QuestionsContainer>
@@ -55,7 +61,7 @@ class Results extends React.Component {
             ))}
           </QuestionsContainer>
           <Button onClick={this.restart}>Restart</Button>
-        </div>
+        </Ray>
       )
       : (
         <Redirect to='/' />

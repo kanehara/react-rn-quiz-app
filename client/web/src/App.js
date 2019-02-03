@@ -31,6 +31,8 @@ class App extends Component {
               textAlign='center'
               alignItems='center' 
               flexDirection='column'
+              maxWidth='80%'
+              margin='auto'
             >
               <GlobalStyle />
               <Router />
