@@ -1,4 +1,4 @@
-# G2i Trivia
+# Trivia APP
 A trivia app containing a React web client and a React Native mobile client.
 
 **Commands assume you're in the root directory**

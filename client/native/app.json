@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "g2i-trivia",
-    "slug": "g2i-trivia",
+    "name": "trivia",
+    "slug": "trivia",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
