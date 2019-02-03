@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results renders 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#f5faf4",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "justifyContent": "center",
+        "paddingBottom": 40,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "paddingTop": 40,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#292F36",
+          "fontSize": 28,
+          "fontWeight": "bold",
+          "marginBottom": 16,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 4,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    You scored
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#292F36",
+          "fontSize": 22,
+          "fontWeight": "bold",
+          "marginBottom": 12,
+          "marginLeft": 0,
+          "marginRight": 0,
+          "marginTop": 4,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+     / 
+    3
+  </Text>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#ffffff",
+          "borderColor": "#c5e0de",
+          "borderRadius": 10,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "justifyContent": "center",
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+          "paddingBottom": 5,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "paddingTop": 5,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={null}
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#292F36",
+              "fontSize": 16,
+              "fontWeight": "700",
+              "marginBottom": 4,
+              "marginLeft": 0,
+              "marginRight": 0,
+              "marginTop": 4,
+            },
+          ]
+        }
+      >
+        Restart
+      </Text>
+    </View>
+  </View>
+</View>
+`;

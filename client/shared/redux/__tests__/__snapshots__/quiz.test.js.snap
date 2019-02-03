@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`actions .reset snapshot 1`] = `
+Object {
+  "type": "RESET",
+}
+`;
+
+exports[`actions .setAnswer snapshot 1`] = `
+Object {
+  "answer": "true",
+  "type": "SET_ANSWER",
+}
+`;
+
+exports[`actions .setQuestions snapshot 1`] = `
+Object {
+  "questions": Array [
+    "wee",
+    "woo",
+    "fee",
+  ],
+  "type": "SET_QUESTIONS",
+}
+`;

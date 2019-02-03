@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz renders a redirect to / if no question 1`] = `
+<div
+  data-testid="homeRedirect"
+/>
+`;
+
+exports[`Quiz renders a redirect to /results if finished 1`] = `
+<div
+  data-testid="resultsRedirect"
+/>
+`;
+
+exports[`Quiz renders question if present 1`] = `
+<div
+  className="sc-ifAKCX bTtQcI"
+  display="flex"
+>
+  <h3>
+    Rick & Morty
+  </h3>
+  <div
+    className="sc-bdVaJa lgpJss"
+  >
+    <h1>
+      Who is Rick?
+    </h1>
+    <h5>
+      1
+       of 
+      1
+    </h5>
+  </div>
+  <div
+    className="sc-bwzfXH giqBiD"
+  >
+    <button
+      className="sc-bdVaJa sc-bwzfXH sc-bxivhb jJnRuO"
+      onClick={[Function]}
+    >
+      True
+    </button>
+    <button
+      className="sc-bdVaJa sc-htpNat kAvMjd"
+      onClick={[Function]}
+    >
+      False
+    </button>
+  </div>
+</div>
+`;

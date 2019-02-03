@@ -37,11 +37,9 @@ class Question extends React.Component {
   }
 }
 
-class Results extends React.Component {
-  componentDidMount () {
-    if (this.props.inProgress) {
-      this.props.history.replace('/quiz')
-    }
+export class Results extends React.Component {
+  static defaultProps = {
+    questions: []
   }
 
   restart = () => {
@@ -50,22 +48,32 @@ class Results extends React.Component {
   }
 
   render () {
-    return this.props.finished
-      ? (
-        <Ray maxWidth='50%' margin='auto'>
-          <h2>You scored</h2>
-          <h2>{this.props.score} / {this.props.questions.length}</h2>
-          <QuestionsContainer>
-            {this.props.questions.map((q, i) => (
-              <Question answer={this.props.answers[i]} question={q} key={i} />
-            ))}
-          </QuestionsContainer>
-          <Button onClick={this.restart}>Restart</Button>
-        </Ray>
+    if (this.props.finished) {
+      return (
+        <div data-testid='homeRedirect'>
+          <Redirect to='/' />
+        </div>
       )
-      : (
-        <Redirect to='/' />
+    } else if (this.props.inProgress) {
+      return (
+        <div data-testid='quizRedirect'>
+          <Redirect to='/quiz' />
+        </div>
       )
+    }
+
+    return (
+      <Ray maxWidth='50%' margin='auto'>
+        <h2>You scored</h2>
+        <h2>{this.props.score} / {this.props.questions.length}</h2>
+        <QuestionsContainer>
+          {this.props.questions.map((q, i) => (
+            <Question answer={this.props.answers[i]} question={q} key={i} />
+          ))}
+        </QuestionsContainer>
+        <Button onClick={this.restart}>Restart</Button>
+      </Ray>
+    )
   }
 }
 

@@ -29,7 +29,11 @@ const Question = props => (
 )
 
 
-class Results extends React.Component {
+export class Results extends React.Component {
+  static defaultProps = {
+    questions: []
+  }
+
   componentDidMount () {
     if (this.props.inProgress) {
       this.props.navigation.navigate('quiz')
@@ -51,7 +55,6 @@ class Results extends React.Component {
             <Question 
               key={i} 
               correct={q.correct_answer === this.props.answers[i]}
-              question={q}
             >
               {q.question} - {q.correct_answer}
             </Question>

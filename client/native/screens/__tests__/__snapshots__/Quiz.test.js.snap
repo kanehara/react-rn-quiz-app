@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz renders 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#f5faf4",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "justifyContent": "center",
+        "paddingBottom": 40,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "paddingTop": 40,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderColor": "#e5e5e5",
+          "borderRadius": 15,
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "justifyContent": "center",
+          "paddingBottom": 25,
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 25,
+          "width": "95%",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#292F36",
+            "fontSize": 18,
+            "fontWeight": "bold",
+            "marginBottom": 10,
+            "marginLeft": 0,
+            "marginRight": 0,
+            "marginTop": 4,
+            "textAlign": "center",
+          },
+        ]
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#292F36",
+            "fontSize": 28,
+            "fontWeight": "bold",
+            "marginBottom": 16,
+            "marginLeft": 0,
+            "marginRight": 0,
+            "marginTop": 4,
+            "textAlign": "center",
+          },
+        ]
+      }
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#292F36",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "marginBottom": 6,
+            "marginLeft": 0,
+            "marginRight": 0,
+            "marginTop": 4,
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      NaN
+       of 
+      0
+    </Text>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "borderColor": "#c5e0de",
+            "borderRadius": 10,
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "justifyContent": "center",
+            "marginBottom": 10,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "marginTop": 10,
+            "paddingBottom": 5,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 5,
+            "width": "100%",
+          },
+          Object {
+            "backgroundColor": "#7095ff",
+          },
+        ]
+      }
+    >
+      <View
+        style={null}
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#292F36",
+                "fontSize": 16,
+                "fontWeight": "700",
+                "marginBottom": 4,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "marginTop": 4,
+              },
+            ]
+          }
+        >
+          True
+        </Text>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "borderColor": "#c5e0de",
+            "borderRadius": 10,
+            "borderStyle": "solid",
+            "borderWidth": 1,
+            "justifyContent": "center",
+            "marginBottom": 10,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "marginTop": 10,
+            "paddingBottom": 5,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 5,
+            "width": "100%",
+          },
+          Object {
+            "backgroundColor": "#ff5757",
+          },
+        ]
+      }
+    >
+      <View
+        style={null}
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#292F36",
+                "fontSize": 16,
+                "fontWeight": "700",
+                "marginBottom": 4,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "marginTop": 4,
+              },
+            ]
+          }
+        >
+          False
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

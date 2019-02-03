@@ -6,7 +6,7 @@ import {Redirect} from 'react-router-dom'
 import {TrueButton as _TrueButton, FalseButton} from '../components/Button'
 import styled from 'styled-components'
 
-const TrueButton = styled(_TrueButton)`
+export const TrueButton = styled(_TrueButton)`
   margin-bottom: 35px;
 `
 
@@ -26,14 +26,18 @@ const Card = styled.div`
   }
 `
 
-class Quiz extends React.Component {
+export class Quiz extends React.Component {
+  static defaultProps = {
+    questions: []
+  }
+
   get question () {
     return this.props.questions[this.props.questionIndex]
   }
 
   render () {
     return this.props.finished
-      ? <Redirect to='/results' />
+      ? <div data-testid='resultsRedirect'><Redirect to='/results' /></div>
       : this.question
         ? (
           <Card display='flex'>
@@ -49,7 +53,7 @@ class Quiz extends React.Component {
           </Card>
         )
         : (
-          <Redirect to='/' />
+          <div data-testid='homeRedirect'><Redirect to='/' /></div>
         )
   }
 }

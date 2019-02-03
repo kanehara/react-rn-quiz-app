@@ -1,7 +1,7 @@
 import client from 'shared/apolloClient'
 import gql from 'graphql-tag'
 
-const initialState = {
+export const initialState = {
   questions: [],
   answers: [],
   questionIndex: 0
@@ -13,7 +13,7 @@ const score = (state, idx = 0, cumm = 0) => {
   }
   return score(state, idx + 1, cumm + (state.answers[idx] === state.questions[idx].correct_answer))
 }
-const finished = state => state.questions.length > 0 && state.questionIndex === state.questions.length
+const finished = state => state.questions.length > 0 && state.questionIndex >= state.questions.length
 const inProgress = state => !finished(state) && state.questions.length > 0
 
 export const getters = {

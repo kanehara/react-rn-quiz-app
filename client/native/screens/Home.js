@@ -7,7 +7,7 @@ import { ScreenView } from 'native/components/View'
 import { connect } from 'react-redux'
 import { actions, getters } from 'shared/redux/quiz'
 
-class Home extends React.Component {
+export class Home extends React.Component {
   state = {
     loadingQuiz: false,
     error: null

@@ -11,7 +11,7 @@ Object {
         "incorrect_answers": Array [
           "False",
         ],
-        "question": "&quot;Undertale&quot; is an RPG created by Toby Fox and released in 2015.",
+        "question": "\\"Undertale\\" is an RPG created by Toby Fox and released in 2015.",
         "type": "boolean",
       },
       Object {
@@ -35,7 +35,7 @@ Object {
           "Sharks",
           "Squids",
         ],
-        "question": "In Macbeth, the eyes of what animals were used in the Witches&#039; cauldron?",
+        "question": "In Macbeth, the eyes of what animals were used in the Witches' cauldron?",
         "type": "multiple",
       },
       Object {
@@ -73,7 +73,7 @@ Object {
         "incorrect_answers": Array [
           "False",
         ],
-        "question": "&quot;Undertale&quot; is an RPG created by Toby Fox and released in 2015.",
+        "question": "\\"Undertale\\" is an RPG created by Toby Fox and released in 2015.",
         "type": "boolean",
       },
       Object {
@@ -97,7 +97,7 @@ Object {
           "Sharks",
           "Squids",
         ],
-        "question": "In Macbeth, the eyes of what animals were used in the Witches&#039; cauldron?",
+        "question": "In Macbeth, the eyes of what animals were used in the Witches' cauldron?",
         "type": "multiple",
       },
       Object {

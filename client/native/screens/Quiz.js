@@ -17,7 +17,11 @@ const Card = styled(View)`
   width: 95%;
 `
 
-class QuizScreen extends React.Component {
+export class Quiz extends React.Component {
+  static defaultProps = {
+    questions: []
+  }
+
   get question () {
     return this.props.questions[this.props.questionIndex] || {}
   }
@@ -62,4 +66,4 @@ export default connect(
   dispatch => ({
     setAnswer: answer => dispatch(actions.setAnswer(answer))
   })
-)(QuizScreen)
+)(Quiz)

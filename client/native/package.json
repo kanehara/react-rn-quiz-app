@@ -7,7 +7,8 @@
     "start": "expo start",
     "android": "expo start --android && adb reverse tcp:4000 tcp:4000",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest"
   },
   "dependencies": {
     "apollo-boost": "^0.1.27",
@@ -24,8 +25,20 @@
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
     "crna-make-symlinks-for-yarn-workspaces": "^1.0.1",
+    "jest": "^24.0.0",
+    "jest-expo": "^32.0.0",
     "metro-bundler": "^0.22.1",
-    "metro-bundler-config-yarn-workspaces": "^1.0.3"
+    "metro-bundler-config-yarn-workspaces": "^1.0.3",
+    "whatwg-fetch": "2.0.4"
   },
-  "private": true
+  "private": true,
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(.*expo.*|.*react.*)/)"
+    ],
+    "moduleNameMapper": {
+      "styled-components": "styled-components/native"
+    }
+  }
 }

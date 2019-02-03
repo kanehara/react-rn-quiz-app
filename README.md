@@ -29,3 +29,18 @@ Start the RN client
 cd client/native && yarn start
 ```
 *Android requires running `yarn android` instead
+
+# Tests
+
+gql tests
+```
+cd gql-server
+yarn test
+```
+
+client tests
+```
+cd client
+yarn workspaces run test
+```
+*you can also run `yarn test` in respective client workspace to run tests specific to a workspace
